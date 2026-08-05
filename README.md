@@ -119,6 +119,13 @@ This clones your repo, installs dependencies, generates the full library and ran
 | `--extra` | — | Optional [uv](https://docs.astral.sh/uv/concepts/projects/init/#projects) extras to install (repeatable) |
 | `--antibacterial-fasta` | `data/antibacterial.fasta` | FASTA file of known antibacterial sequences to check for overlap |
 
+## Starter Kits
+
+The following starter kits are compatible with this submission format:
+
+- [ampdiffusion-starter-kit](https://github.com/szczurek-lab/ampdiffusion-starter-kit)
+- [hydramp-starter-kit](https://github.com/szczurek-lab/hydramp-starter-kit)
+
 ## Project Structure
 
 ```
