@@ -151,3 +151,6 @@ appropriately reviewed research protocol.
 ## License
 
 BSD-3-Clause. See `LICENSE`.
+
+Before a formal Kaggle entry, complete the participant-controlled eligibility,
+rights, consent, and platform steps in [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md).
