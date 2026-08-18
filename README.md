@@ -94,6 +94,29 @@ challenge reference and at most 0.75 against every already selected top
 candidate. This makes all 100 entries eligible for uniform experimental sampling
 while retaining internal diversity.
 
+## Reproducibility preflight
+
+The default 50,000-sequence run was checked with the challenge's unmodified
+`scripts/verify_submission.py` from a clean clone. These descriptive results are
+not a claim about the hidden Phase-1 ranking:
+
+| Check | Result |
+| --- | ---: |
+| Library records / unique records | 50,000 / 50,000 |
+| Library mean length | 18.76 (training reference: 18.72) |
+| Library mean approximate charge | +3.36 (training reference: +2.88) |
+| Library mean hydrophobic fraction | 0.426 (training reference: 0.436) |
+| Top-100 passing the HydrAMP residue filter | 100 / 100 |
+| Maximum top-to-reference Levenshtein ratio | 0.6842 (required: at most 0.80) |
+| Maximum pairwise ratio within the top 100 | 0.5789 (configured ceiling: 0.75) |
+| `library.fasta` SHA-256 | `5e7c6c208a1d1a68f4009b7948e068669b59119e11688c999485ce058b6ad3dd` |
+| `top.fasta` SHA-256 | `0521b0572c577de334ca71709bac15f5fe79c89b7aca22b62d6b012afa6c128d` |
+
+On an Apple M4 development machine, full generation and ranking took 4.4-4.8
+seconds with approximately 70 MB peak resident memory. GitHub Actions repeats
+the official clean-clone validator and runs quality checks on Python 3.10 and
+3.13.
+
 ## Training data and provenance
 
 The only training data are `data/antibacterial.fasta`, copied unchanged from the
