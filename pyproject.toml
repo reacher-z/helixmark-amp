@@ -1,12 +1,11 @@
 [project]
-name = "amp-challenge-2027"
+name = "helixmark-amp"
 version = "0.1.0"
-description = "Minimal example repository"
+description = "Reproducible Markov ensemble for AMP Challenge 2027"
 readme = "README.md"
 authors = [
-    { name = "your name", email = "username@domain.com" }
+    { name = "reacher-z" }
 ]
-
 requires-python = ">=3.10"
 dependencies = [
     "levenshtein>=0.27.3",
@@ -16,6 +15,24 @@ dependencies = [
 [project.scripts]
 generate = "amp_challenge_2027.generate:main"
 
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "ruff>=0.12.0",
+]
+
 [build-system]
 requires = ["uv_build>=0.9.18,<0.10.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "amp_challenge_2027"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/verify_submission.py" = ["BLE001"]
